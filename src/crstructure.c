@@ -499,7 +499,7 @@ CRAPI CRBOOL CRDynSetup(CRSTRUCTURE dyn, void *buffer, CRUINT64 size)
 	{
 		pInner->capacity = 8;
 		pInner->pub.total = 0;
-		pInner->arr = calloc(8, 1);
+		pInner->arr = CRAlloc(NULL, 8);
 		goto Done;
 	}
 	pInner->capacity = 1;
