@@ -2,12 +2,12 @@
  * @Author: RetliveAdore lizaterop@gmail.com
  * @Date: 2024-06-10 18:04:45
  * @LastEditors: RetliveAdore lizaterop@gmail.com
- * @LastEditTime: 2024-06-19 03:19:34
+ * @LastEditTime: 2024-06-21 19:49:48
  * @FilePath: \Crystal-Algorithm\src\crstructure.c
  * @Description: 
  * Coptright (c) 2024 by RetliveAdore-lizaterop@gmail.com, All Rights Reserved. 
  */
-#include <CrystalAlgorithms.h>
+#include <AlgDefs.h>
 #include <string.h>
 
 #ifdef CR_WINDOWS
@@ -172,7 +172,7 @@ CRAPI CRSTRUCTURE CRDynamic(CRUINT64 size)
     return pInner;
 }
 
-CRAPI CRSTRUCTURE CRTree()
+CRAPI CRSTRUCTURE CRTree(void)
 {
 	PCRTREE pInner = CRAlloc(NULL, sizeof(CRTREE));
 	if (!pInner)
@@ -184,7 +184,7 @@ CRAPI CRSTRUCTURE CRTree()
 	return pInner;
 }
 
-CRAPI CRSTRUCTURE CRLinear()
+CRAPI CRSTRUCTURE CRLinear(void)
 {
 	PCRLINEAR pInner = CRAlloc(NULL, sizeof(CRLINEAR));
 	if (!pInner)
@@ -244,7 +244,7 @@ CRAPI CRSTRUCTURE CRQuadtree(CRUINT64 w, CRUINT64 h, CRUINT8 max)
 	return NULL;
 }
 
-CRAPI CRUINT32 CRStructureSize(CRSTRUCTURE s)
+CRAPI CRUINT64 CRStructureSize(CRSTRUCTURE s)
 {
 	if (s)
 		return ((CRSTRUCTUREPUB*)s)->total;
@@ -390,7 +390,7 @@ CRAPI CRBOOL CRDynPop(CRSTRUCTURE dyn, void* data, CRDynEnum mode)
     return back;
 }
 
-CRAPI CRBOOL CRDynSet(CRSTRUCTURE dyn, void* data, CRUINT64 sub, CRENUM mode)
+CRAPI CRBOOL CRDynSet(CRSTRUCTURE dyn, void* data, CRUINT64 sub, CRDynEnum mode)
 {
 	PCRDYN pInner = dyn;
 	if (!pInner || pInner->pub.type != DYN)
@@ -435,7 +435,7 @@ Push:
 	return back;
 }
 
-CRAPI CRBOOL CRDynSeek(CRSTRUCTURE dyn, void* data, CRUINT32 sub, CRENUM mode)
+CRAPI CRBOOL CRDynSeek(CRSTRUCTURE dyn, void* data, CRUINT64 sub, CRDynEnum mode)
 {
 	PCRDYN pInner = dyn;
 	if (pInner && pInner->pub.type == DYN)
@@ -481,7 +481,7 @@ CRAPI CRBOOL CRDynSeek(CRSTRUCTURE dyn, void* data, CRUINT32 sub, CRENUM mode)
 	return CRTRUE;
 }
 
-CRAPI CRBOOL CRDynSetup(CRSTRUCTURE dyn, void *buffer, CRUINT32 size)
+CRAPI CRBOOL CRDynSetup(CRSTRUCTURE dyn, void *buffer, CRUINT64 size)
 {
 	PCRDYN pInner = dyn;
 	if (!pInner || pInner->pub.type != DYN)
@@ -1087,8 +1087,6 @@ CRAPI CRBOOL CRTreeSeek(CRSTRUCTURE tree, CRLVOID* data, CRINT64 key)
 // 
 //线性表实现
 //
-
-typedef void (*TrashBinFunc)(void);
 
 CRAPI CRBOOL CRLinPut(CRSTRUCTURE lin, CRLVOID data, CRINT64 seek)
 {
