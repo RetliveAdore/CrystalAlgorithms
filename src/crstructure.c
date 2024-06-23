@@ -2,8 +2,8 @@
  * @Author: RetliveAdore lizaterop@gmail.com
  * @Date: 2024-06-10 18:04:45
  * @LastEditors: RetliveAdore lizaterop@gmail.com
- * @LastEditTime: 2024-06-21 19:49:48
- * @FilePath: \Crystal-Algorithm\src\crstructure.c
+ * @LastEditTime: 2024-06-24 02:19:29
+ * @FilePath: \CrystalAlgorithms\src\crstructure.c
  * @Description: 
  * Coptright (c) 2024 by RetliveAdore-lizaterop@gmail.com, All Rights Reserved. 
  */
@@ -1080,7 +1080,7 @@ CRAPI CRBOOL CRTreeSeek(CRSTRUCTURE tree, CRLVOID* data, CRINT64 key)
 	}
 	if (data) *data = node->data;
 	LeaveCriticalSection(&(pInner->pub.cs));
-	return 0;
+	return CRTRUE;
 }
 
 //
