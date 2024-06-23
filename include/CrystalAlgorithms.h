@@ -2,8 +2,8 @@
  * @Author: RetliveAdore lizaterop@gmail.com
  * @Date: 2024-06-10 16:11:31
  * @LastEditors: RetliveAdore lizaterop@gmail.com
- * @LastEditTime: 2024-06-21 21:10:53
- * @FilePath: \Crystal-Algorithm\include\CrystalAlgorithms.h
+ * @LastEditTime: 2024-06-23 16:47:46
+ * @FilePath: \CrystalAlgorithms\include\CrystalAlgorithms.h
  * @Description: 
  * Coptright (c) 2024 by RetliveAdore-lizaterop@gmail.com, All Rights Reserved. 
  */
@@ -44,7 +44,7 @@ typedef CRUINT64(*CRSTRUCTURESIZE)(CRSTRUCTURE s);
 /**
  * 销毁并释放数据结构
  */
-typedef CRBOOL(*CRFREESTRUCTURE)(CRSTRUCTURE s);
+typedef CRBOOL(*CRFREESTRUCTURE)(CRSTRUCTURE s, DSCallback cal);
 #define CRFreeStructure ((CRFREESTRUCTURE)CRAlgorithmsFunList[10])
 
 
