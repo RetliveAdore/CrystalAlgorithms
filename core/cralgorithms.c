@@ -2,8 +2,8 @@
  * @Author: RetliveAdore lizaterop@gmail.com
  * @Date: 2024-06-10 18:01:51
  * @LastEditors: RetliveAdore lizaterop@gmail.com
- * @LastEditTime: 2024-06-21 21:09:36
- * @FilePath: \Crystal-Algorithm\core\cralgorithms.c
+ * @LastEditTime: 2024-06-24 02:01:36
+ * @FilePath: \CrystalAlgorithms\core\cralgorithms.c
  * @Description: 
  * Coptright (c) 2024 by RetliveAdore-lizaterop@gmail.com, All Rights Reserved. 
  */
@@ -25,6 +25,7 @@ void* CRAlgorithmsFunListArr[] =
     _cr_inner_do_nothing_alg_, "CRDynPop",
     _cr_inner_do_nothing_alg_, "CRDynSet",
     _cr_inner_do_nothing_alg_, "CRDynSeek",
+    _cr_inner_do_nothing_alg_, "CRDynSetup",
     _cr_inner_do_nothing_alg_, "CRDynGetBits",
     _cr_inner_do_nothing_alg_, "CRDynSetBits",
     //24
