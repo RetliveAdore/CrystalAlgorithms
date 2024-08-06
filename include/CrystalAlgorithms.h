@@ -2,7 +2,7 @@
  * @Author: RetliveAdore lizaterop@gmail.com
  * @Date: 2024-06-10 16:11:31
  * @LastEditors: RetliveAdore lizaterop@gmail.com
- * @LastEditTime: 2024-06-23 16:47:46
+ * @LastEditTime: 2024-08-06 23:28:31
  * @FilePath: \CrystalAlgorithms\include\CrystalAlgorithms.h
  * @Description: 
  * Coptright (c) 2024 by RetliveAdore-lizaterop@gmail.com, All Rights Reserved. 
@@ -144,7 +144,7 @@ typedef CRBOOL(*CRQUADTREECHECK)(CRSTRUCTURE tree, CRLVOID key);
 /**
  * 遍历操作数据结构
  */
-typedef CRBOOL(*CRSTRUCTUREFOREACH)(CRSTRUCTURE s, DSCallback cal, CRLVOID user);
+typedef CRBOOL(*CRSTRUCTUREFOREACH)(CRSTRUCTURE s, DSForeach cal, CRLVOID user);
 #define CRStructureForEach ((CRSTRUCTUREFOREACH)CRAlgorithmsFunList[46])
 
 #endif
